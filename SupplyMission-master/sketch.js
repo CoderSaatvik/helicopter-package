@@ -55,8 +55,9 @@ function draw() {
 }
 
 function keyPressed() {
- if (keyCode === DOWN_ARROW) {
+ if (keyCode === DOWN_ARROW||touches.length>0) {
     Matter.Body.setStatic(packageBody,false);
+	 touches=[]
      }
 }
 
