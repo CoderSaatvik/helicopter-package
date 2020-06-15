@@ -50,16 +50,21 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
-  drawSprites();
+   if (keyDown === DOWN_ARROW||touches.length>0) {
+    Matter.Body.setStatic(packageBody,false);
+	 touches=[]
+     }
+	drawSprites();
  
 }
 
-function keyPressed() {
+/*function keyPressed() {
  if (keyCode === DOWN_ARROW||touches.length>0) {
     Matter.Body.setStatic(packageBody,false);
 	 touches=[]
      }
-}
+}*/
+
 
 
 
